@@ -4,18 +4,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Online Conference Review System</title>
 	<link rel="stylesheet" href="theme.css"/>
+	<script src="title.js"></script>
 </head>
 <body>
 <h1 class="title">Conference Review</h1>
-<button class="register title" id = "Register" onclick = "removeButton()">Register</button>
-<button class="login title" id="Login" onclick = "removeButton()">Login</button>
-<script>
-function removeButton() {
-	 var elem = document.getElementById('Register');
-	 elem.parentNode.removeChild(elem);
-	 elem = document.getElementById('Login');
-	 elem.parentNode.removeChild(elem);
-	}
-</script>
+<button class="register title" 
+	id = "Register" onclick = "removeButtonRegister()">Register</button>
+<button class="login title" 
+	id="Login" onclick = "removeButtonLogin()">Login</button>
 </body>
 </html>
