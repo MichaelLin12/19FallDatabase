@@ -45,6 +45,11 @@ button.login:hover {background-color: #FFFFFF}
 html
 {
 	background-color:#FFFFFF;
+	column-count:2;
+	column-span:1;
+	column-rule-style:solid;
+	column-rule-color: lightblue;
+	column-width:50%;
 }
 /* Style inputs */
   input[type=text], select {
