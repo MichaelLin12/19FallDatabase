@@ -37,7 +37,7 @@ button.login
 	color:#000000;
 	position: absolute;
   	left: 50%;
-  	top: 65%;
+  	top: 70%;
   	transform: translate(-50%, -50%);
 }
 
@@ -45,11 +45,6 @@ button.login:hover {background-color: #FFFFFF}
 html
 {
 	background-color:#FFFFFF;
-	column-count:2;
-	column-span:1;
-	column-rule-style:solid;
-	column-rule-color: lightblue;
-	column-width:50%;
 }
 /* Style inputs */
   input[type=text], select {
@@ -64,7 +59,7 @@ html
 /* Style the submit button */
 input[type=submit] {
   background-color: #393939;
-  color: black;
+  color: #FFFFFF;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -75,4 +70,23 @@ input[type=submit] {
 /* Add a background color to the submit button on mouse-over */
 input[type=submit]:hover {
   background-color: #45a049;
+}
+
+.leftside, .rightside
+{
+	height:100vh;
+	width:100%;
+}
+
+.leftside
+{
+	background-color:#FFFFFF;
+}
+
+.rightside
+{
+	background-image:url("fountain_pen.jpg");
+	background-repeat:no-repeat;
+	background-size:cover;
+	image-rendering:pixelated;
 }

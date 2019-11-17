@@ -1,28 +1,34 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Online Conference Review System</title>
-	<link rel="stylesheet" href="theme.css"/>
-	<script src="title.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Conference Review System</title>
+<link rel="stylesheet" href="theme.css" />
+<script src="title.js"></script>
 </head>
 <body>
-<h1 class="title">Conference Review</h1>
-<button class="register title" 
-	id = "Register" onclick = "removeButtonRegister()">Register</button>
-<button class="login title" 
-	id="Login" onclick = "removeButtonLogin()">Login</button>
-<form action="/action_page.php">
-  Email:<br>
-  <input type="text" name="firstname">
-  <br>
-  First name:<br>
-  <input type="text" name="firstname">
-  <br>
-  Last name:<br>
-  <input type="text" name="lastname" >
-  <br><br>
-  <input type="submit" value="Submit">
-</form> 
+	<div class = "row no-gutters">
+		<div class = "col no-gutters">
+			<div class="leftside">
+				<h1 class="title">Conference Review</h1>
+				<button class="register title" id="Register"
+					onclick="removeButtonRegister()">Register</button>
+				<button class="login title" id="Login" onclick="removeButtonLogin()">Login</button>
+				<form action="/action_page.php">
+		Email:<br> <input type="text" name="firstname"> <br>
+		First name:<br> <input type="text" name="firstname"> <br>
+		Last name:<br> <input type="text" name="lastname"> <br>
+		<br> <input type="submit" value="Submit">
+	</form>
+			</div>
+		</div>
+		<div class = "col no-gutters">
+			<div class="rightside">
+			</div>
+		</div>
+	</div>
+	
 </body>
 </html>
