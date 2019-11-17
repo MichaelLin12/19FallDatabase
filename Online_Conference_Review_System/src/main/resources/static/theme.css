@@ -1,10 +1,16 @@
 p
 {
-
+	color:#191970;
+	font-family:"Times New Roman";
+	font-size: 18px;
+	position: absolute;
+  	left: 50%;
+  	top: 50%;
+  	transform: translate(-50%, -50%);
 }
 h1.title
 {
-	color:#000000;
+	color:#191970;
 	font-family:"Impact";
 	font-size: 40px;
 	position: absolute;
@@ -14,9 +20,9 @@ h1.title
 }
 button.title
 {
-	color:#000000;
+	color:#FFFFFF;
 	border-radius:12px;
-  	border: 2px solid #000000;
+  	border: 2px solid #FFFFFF;
   	padding: 10px 20px;
   	font-size: 24px;
   	cursor: pointer;
@@ -27,17 +33,16 @@ button.register
 {
 	position: absolute;
   	left: 50%;
-  	top: 55%;
+  	top: 45%;
   	transform: translate(-50%, -50%);
 }
-button.register:hover {background-color: #FFFFFF}
+button.register:hover {background-color: ##CFFFE5}
 
 button.login
 {
-	color:#000000;
 	position: absolute;
   	left: 50%;
-  	top: 70%;
+  	top: 60%;
   	transform: translate(-50%, -50%);
 }
 
@@ -48,6 +53,15 @@ html
 }
 /* Style inputs */
   input[type=text], select {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=password], select {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -80,13 +94,19 @@ input[type=submit]:hover {
 
 .leftside
 {
-	background-color:#FFFFFF;
+	background-color:#CFFFE5;
 }
 
 .rightside
 {
-	background-image:url("fountain_pen.jpg");
-	background-repeat:no-repeat;
-	background-size:cover;
-	image-rendering:pixelated;
+	background-color:#191970;
+}
+.style_title
+{
+	color:#FFFFFF;
+	visibility:hidden;
+	position: absolute;
+  	left: 50%;
+  	top: 45%;
+  	transform: translate(-50%, -50%);
 }
