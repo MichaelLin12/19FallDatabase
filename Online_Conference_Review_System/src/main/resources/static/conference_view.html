@@ -6,7 +6,16 @@
 	<link rel="stylesheet" href="theme.css"/>
 </head>
 <body>
-<h1>Conference Review</h1>
-<p>Hello World!</p>
+<h1 class="title">Conference Review</h1>
+<button class="register title" id = "Register" onclick = "removeButton()">Register</button>
+<button class="login title" id="Login" onclick = "removeButton()">Login</button>
+<script>
+function removeButton() {
+	 var elem = document.getElementById('Register');
+	 elem.parentNode.removeChild(elem);
+	 elem = document.getElementById('Login');
+	 elem.parentNode.removeChild(elem);
+	}
+</script>
 </body>
 </html>

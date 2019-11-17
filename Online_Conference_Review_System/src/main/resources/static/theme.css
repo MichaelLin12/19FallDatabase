@@ -2,11 +2,47 @@ p
 {
 
 }
-h1
+h1.title
 {
-
+	color:#FFFFFF;
+	font-family:"Impact";
+	font-size: 40px;
+	position: absolute;
+  	left: 50%;
+  	top: 40%;
+  	transform: translate(-50%, -50%);
 }
-body
+button.title
 {
-	background-color:#ffffff;
+	color:#FFFFFF;
+	border-radius:12px;
+  	border: 2px solid #FFFFFF;
+  	padding: 10px 20px;
+  	font-size: 24px;
+  	cursor: pointer;
+  	text-align: center;
+  	background-color:transparent;
+}
+button.register
+{
+	position: absolute;
+  	left: 50%;
+  	top: 55%;
+  	transform: translate(-50%, -50%);
+}
+button.register:hover {background-color: #000000}
+
+button.login
+{
+	color:#FFFFFF;
+	position: absolute;
+  	left: 50%;
+  	top: 65%;
+  	transform: translate(-50%, -50%);
+}
+
+button.login:hover {background-color: #000000}
+html
+{
+	background-color:#343434;
 }
