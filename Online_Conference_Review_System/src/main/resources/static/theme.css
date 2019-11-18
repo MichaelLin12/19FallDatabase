@@ -5,17 +5,17 @@ p
 	font-size: 18px;
 	position: absolute;
   	left: 50%;
-  	top: 50%;
+  	top: 30%;
   	transform: translate(-50%, -50%);
 }
 h1.title
 {
 	color:#191970;
 	font-family:"Impact";
-	font-size: 40px;
+	font-size: 38px;
 	position: absolute;
   	left: 50%;
-  	top: 40%;
+  	top: 20%;
   	transform: translate(-50%, -50%);
 }
 button.title
@@ -33,80 +33,117 @@ button.register
 {
 	position: absolute;
   	left: 50%;
-  	top: 45%;
+  	top: 50%;
   	transform: translate(-50%, -50%);
 }
-button.register:hover {background-color: ##CFFFE5}
+button.register:hover {background-color: #FFFFFF}
 
 button.login
 {
 	position: absolute;
   	left: 50%;
-  	top: 60%;
+  	top: 65%;
   	transform: translate(-50%, -50%);
 }
 
 button.login:hover {background-color: #FFFFFF}
-html
+body,html
 {
 	background-color:#FFFFFF;
+	overflow:hidden;
+	height: 100%;
+  	background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
+
+  	background-position: center;
+  	background-repeat: no-repeat;
+ 	background-size: cover;
 }
-/* Style inputs */
   input[type=text], select {
-  padding: 12px 20px;
-  margin: 8px 0;
+  padding: 8px 16px;
+  margin: 4px 0;
   display: inline-block;
-  border: 1px solid #000000;
+  border: 1px solid #FFFFFF;
   border-radius: 4px;
   box-sizing: border-box;
 }
-
+  input[type=number], select {
+  padding: 8px 16px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 input[type=password], select {
-  padding: 12px 20px;
-  margin: 8px 0;
+  padding: 8px 16px;
+  margin: 4px 0;
   display: inline-block;
-  border: 1px solid #000000;
+  border: 1px solid #FFFFFF;
   border-radius: 4px;
   box-sizing: border-box;
 }
-
-/* Style the submit button */
+input[type=email], select {
+  padding: 8px 16px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="radio"] {
+  margin-right: 0px;
+}
 input[type=submit] {
-  background-color: #393939;
+  background-color: transparent;
   color: #FFFFFF;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
+  padding: 10px 16px;
+  margin: 4px 0;
+  border: 1px solid #FFFFFF;
   border-radius: 4px;
   cursor: pointer;
 }
 
-/* Add a background color to the submit button on mouse-over */
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: transparent;
 }
-
-.leftside, .rightside
-{
-	height:100vh;
-	width:100%;
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 5px;
+  background-color:transparent;
+  padding: 5px;
+  visibility:hidden;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
 }
-
-.leftside
-{
-	background-color:#CFFFE5;
-}
-
-.rightside
-{
-	background-color:#191970;
-}
-.style_title
+.style_title_login
 {
 	color:#FFFFFF;
 	visibility:hidden;
 	position: absolute;
   	left: 50%;
-  	top: 45%;
+  	top: 50%;
+  	transform: translate(-50%, -50%);
+}
+.style_title_register
+{
+	color:#FFFFFF;
+	visibility:hidden;
+}
+
+.radio
+{
+	position: absolute;
+  	left: 50%;
+  	top: 75%;
+  	transform: translate(-50%, -50%);
+}
+button.register_register
+{
+	position: absolute;
+  	left: 50%;
+  	top: 90%;
   	transform: translate(-50%, -50%);
 }
