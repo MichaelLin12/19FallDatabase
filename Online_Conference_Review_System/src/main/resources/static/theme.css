@@ -20,9 +20,7 @@ h1.title
 }
 button.title
 {
-	color:#FFFFFF;
 	border-radius:12px;
-  	border: 2px solid #FFFFFF;
   	padding: 10px 20px;
   	font-size: 24px;
   	cursor: pointer;
@@ -31,6 +29,8 @@ button.title
 }
 button.register
 {
+	color:#191970;
+	border: 2px solid #191970;
 	position: absolute;
   	left: 50%;
   	top: 50%;
@@ -40,13 +40,15 @@ button.register:hover {background-color: #FFFFFF}
 
 button.login
 {
+	color:#FFFFFF;
+	border: 2px solid #FFFFFF;
 	position: absolute;
   	left: 50%;
   	top: 65%;
   	transform: translate(-50%, -50%);
 }
 
-button.login:hover {background-color: #FFFFFF}
+button.login:hover {background-color: #191970}
 body,html
 {
 	background-color:#FFFFFF;
