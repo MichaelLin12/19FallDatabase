@@ -149,6 +149,7 @@ input[type=submit]:hover {
 }
 button.register_register
 {
+	border: 2px solid #FFFFFF;
 	position: absolute;
   	left: 50%;
   	top: 90%;
