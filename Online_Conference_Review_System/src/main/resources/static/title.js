@@ -29,6 +29,24 @@ function removeButtonRegister() {
 	 elem.style.visibility = 'visible';
 	 elem = document.getElementById('Rfname');
 	 elem.readOnly = false;
+	 elem = document.getElementById('Rlname');
+	 elem.readOnly = false;
+	 elem = document.getElementById('Rminit');
+	 elem.readOnly = false;
+	 elem = document.getElementById('Rlname');
+	 elem.readOnly = false;
+	 elem = document.getElementById('Remail');
+	 elem.readOnly = false;
+	 elem = document.getElementById('Raffil');
+	 elem.readOnly = false;
+	 elem = document.getElementById('RP');
+	 elem.readOnly = false;
+	 elem = document.getElementById('RRP');
+	 elem.readOnly = false;
+	 elem = document.getElementById('Rphone');
+	 elem.readOnly = false;
+	 elem = document.getElementById('Rsubmit');
+	 elem.disabled = false;
 	}
 	
 function removeButtonLogin() {
