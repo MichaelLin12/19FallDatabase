@@ -15,19 +15,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.demo.domain.Employee;
+import com.example.demo.service.EmployeeService;
+
 
 
 @Controller
-public class GreetingController {
+public class CompanyController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(GreetingController.class);
+	private static final Logger logger = LoggerFactory.getLogger(CompanyController.class);
 	
-
-    @GetMapping("/greeting")
-    public String greeting(@RequestParam(name="greetingName", required=false, defaultValue="World") String name, Model model) {
-        model.addAttribute("greetingName", name);
-        return "greeting";
+	EmployeeService empService;
+	
+    @RequestMapping(value = "/employee", method = RequestMethod.GET)
+    public String displayEmployees(Model model) {
+    	
+    	List<Employee> empList = new ArrayList<Employee>();
+    	
+    	empService = new EmployeeService();
+    	empList = empService.getEmpList();
+    	
+        model.addAttribute("empList",empList);
+        return "empLanding";
     }
+    
+    
     
 
 	
