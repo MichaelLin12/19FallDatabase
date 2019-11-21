@@ -106,7 +106,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: transparent;
+  background-color: #191970;
 }
 .grid-container {
   display: grid;
