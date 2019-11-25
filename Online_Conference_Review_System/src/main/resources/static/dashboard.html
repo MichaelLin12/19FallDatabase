@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+
+    <button class="paper" data-toggle="modal" data-target="#exampleModalCenter">Paper </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Review Paper</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <form class="review-form">
+                        <div class="input-group">
+                            <input type="text" name="email" autocomplete="off" required />
+                            <label>Review Email</label>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" name="paperid" autocomplete="off" required />
+                            <label>Paper Id</label>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="date" name="reviewdate" />
+                            <label>Review Date</label>
+                        </div>
+
+                        <div class="input-group">
+                            <select name="techmerit" required>
+                            <option value="" disabled>Select Merit</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5</option>
+                            <option value=6>6</option>
+                            <option value=7>7</option>
+                            <option value=8>8</option>
+                            <option value=9>9</option>
+                            <option value=10>10</option>
+                            </select>
+                            <label>Tech Merit</label>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" name="readability" autocomplete="off" required />
+                            <label>Readability</label>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" name="originality" autocomplete="off" required />
+                            <label>Originality</label>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" name="relevance" autocomplete="off" required />
+                            <label>Relevance</label>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" name="recomm" autocomplete="off" required />
+                            <label>Overall Recommedation</label>
+                        </div>
+
+                        <div class="input-group">
+                            <textarea rows="4" cols="50" name="committeecomment" autocomplete="off" required></textarea>
+                            <label>Comment For Committee</label>
+                        </div>
+
+                        <div class="input-group">
+                            <textarea rows="4" cols="50" name="authorcomment" autocomplete="off" required></textarea>
+                            <label>Comment For Author</label>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-btm" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn-btm">Review</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
