@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Conference Review System</title>
+<link rel="stylesheet" href="theme.css" />
+</head>
+<body>
+	<div>
+		<div class="grid-container" id="register_grid">
+			<div>
+				<form class="style_title_register_dark" id="register_form1"
+					action="">
+					First name:<br> <input type="text" name="fname" id="Rfname">
+				</form>
+			</div>
+			<div>
+				<form class="style_title_register_dark" id="register_form2"
+					action="">
+					Email:<br> <input type="email" name="Email" id="Remail">
+				</form>
+			</div>
+			<div>
+				<form class="style_title_register_dark" id="register_form3"
+					action="">
+					Middle initial:<br> <input type="text" name="Middle"
+						id="Rminit">
+				</form>
+			</div>
+			<div>
+				<form class="style_title_register_dark" id="register_form4"
+					action="">
+					Phone number:<br> <input type="number" name="phone"
+						id="Rphone">
+				</form>
+			</div>
+			<div>
+				<form class="style_title_register_dark" id="register_form5"
+					action="">
+					Last name:<br> <input type="text" name="Lastname" id="Rlname">
+				</form>
+			</div>
+			<div>
+				<form class="style_title_register_dark" id="register_form6"
+					action="">
+					Affiliation:<br> <input type="text" name="Affil" id="Raffil">
+				</form>
+			</div>
+			<div>
+				<form class="style_title_register" id="register_form7" action="">
+					Password:<br> <input type="password" name="Password" id="RP">
+				</form>
+			</div>
+			<div>
+				<form class="style_title_register" id="register_form8" action="">
+					Re-type Password:<br> <input type="password" name="Rpassword"
+						id="RRP">
+				</form>
+			</div>
+		</div>
+	</div>
+	<form class="style_title_register radio" action="/action_page.php"
+		id="role">
+		<br> <input type="radio" name="Rradio" id="RRA">Author <input
+			type="radio" name="Rradio" id="RRR">Reviewer <input
+			type="radio" name="Rradio" id="RRB">Both
+	</form>
+	<button class="register_register" name="Rsubmit" id="Rsubmit">Register</button>
+</body>
+</html>

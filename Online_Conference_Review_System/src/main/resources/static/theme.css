@@ -114,7 +114,6 @@ input[type=submit]:hover {
   grid-gap: 5px;
   background-color:transparent;
   padding: 5px;
-  visibility:hidden;
   position: absolute;
   left: 50%;
   top: 45%;
@@ -123,7 +122,6 @@ input[type=submit]:hover {
 .style_title_login
 {
 	color:#191970;
-	visibility:hidden;
 	position: absolute;
   	left: 50%;
   	top: 50%;
@@ -132,12 +130,10 @@ input[type=submit]:hover {
 .style_title_register
 {
 	color:#FFFFFF;
-	visibility:hidden;
 }
 .style_title_register_dark
 {
 	color:#191970;
-	visibility:hidden;
 }
 
 .radio
@@ -161,7 +157,6 @@ button.register_register
   	top: 90%;
   	transform: translate(-50%, -50%);
   	color:#FFFFFF;
-	visibility:hidden;
 }
 
 button.register_register:hover{background-color:#191970;}
