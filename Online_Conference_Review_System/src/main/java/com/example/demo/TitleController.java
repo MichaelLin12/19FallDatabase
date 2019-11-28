@@ -23,4 +23,10 @@ public class TitleController {
 	{
 		return "register";
 	}
+	
+	@RequestMapping(value="/login",method=RequestMethod.GET)
+	public String displayLogin(Model model)
+	{
+		return "login";
+	}
 }

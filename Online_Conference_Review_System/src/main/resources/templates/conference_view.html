@@ -25,7 +25,7 @@ h1.title
   	top: 20%;
   	transform: translate(-50%, -50%);
 }
-button.title
+.title
 {
 	border-radius:12px;
   	padding: 10px 20px;
@@ -34,7 +34,7 @@ button.title
   	text-align: center;
   	background-color:transparent;
 }
-button.register
+.register
 {
 	color:#191970;
 	border: 2px solid #191970;
@@ -43,9 +43,9 @@ button.register
   	top: 50%;
   	transform: translate(-50%, -50%);
 }
-button.register:hover {background-color: #FFFFFF}
+.register:hover {background-color: #FFFFFF}
 
-button.login
+.login
 {
 	color:#FFFFFF;
 	border: 2px solid #FFFFFF;
@@ -55,7 +55,7 @@ button.login
   	transform: translate(-50%, -50%);
 }
 
-button.login:hover {background-color: #191970}
+.login:hover {background-color: #191970}
 body,html
 {
 	background-color:#FFFFFF;
@@ -102,19 +102,6 @@ input[type=email], select {
 input[type="radio"] {
   margin-right: 0px;
 }
-input[type=submit] {
-  background-color: transparent;
-  color: #FFFFFF;
-  padding: 10px 16px;
-  margin: 4px 0;
-  border: 1px solid #FFFFFF;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #191970;
-}
 .grid-container {
   display: grid;
   grid-template-columns: auto auto;
@@ -125,14 +112,6 @@ input[type=submit]:hover {
   left: 50%;
   top: 45%;
   transform: translate(-50%, -50%);
-}
-.style_title_login
-{
-	color:#191970;
-	position: absolute;
-  	left: 50%;
-  	top: 50%;
-  	transform: translate(-50%, -50%);
 }
 .style_title_register
 {
@@ -175,9 +154,12 @@ button.register_register:hover{background-color:#191970;}
 		<h1 class="title" id="title">Conference Review</h1>
 		<br>
 		<p id="description">Inspiration Awaits</p>
-		<button class="register title" id="Register"
-			 th:onclick=local.href/register>Register</button>
-		<button class="login title" id="Login" onclick="removeButtonLogin()">Login</button>
+		<form action="#" th:action="@{/register}"  method="get">
+		<br><input type="submit" class="register title" value="Register" id="register">
+		</form>
+			 <form action="#" th:action="@{/login}"  method="get">
+		<br><input type="submit" class="login title" value="Login" id="register">
+		</form>
 	</div>
 </body>
 </html>

@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.example.demo.service.EmployeeDAO;
+import com.example.demo.dao.EmployeeDAO;
 import com.example.demo.domain.Employee;
 
 @Component
