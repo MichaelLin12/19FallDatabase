@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Online Conference Review System</title>
@@ -56,11 +56,11 @@ input[type=submit]:hover {
 </head>
 <body>
 	<div>
-		<form action="/action_page.php" class="style_title_login"
+		<form th:action="@{/login_review}" th:object="${login}" method="post" class="style_title_login"
 			id="Login_form">
-			Email:<br> <input type="email" name="Email" id="Lemail">
+			Email:<br> <input type="email" name="Email" id="Lemail" th:field="*{email}">
 			<br> Password:<br> <input type="password" name="Password"
-				id="LPassword"> <br> <br> <input
+				id="LPassword" th:field="*{password}"> <br> <br> <input
 				type="submit" value="Login" id="login">
 		</form>
 	</div>

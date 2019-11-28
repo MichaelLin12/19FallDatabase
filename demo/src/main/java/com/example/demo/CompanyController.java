@@ -44,7 +44,7 @@ public class CompanyController {
     @RequestMapping(value = "/newEmployee", method = RequestMethod.GET)
     public String newEmployee(@ModelAttribute Employee employee, Model model) {
 
-    	employee = new Employee("","", "");
+    	employee = new Employee("jkl;akdjfa","akd;lfkj", "ajkl;dkjf");
     	model.addAttribute("employee",employee);
     	model.addAttribute("dnoList",populateDNo());
 

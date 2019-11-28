@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OnlineConferenceReviewSystemApplication {
+public class OnlineConference{
 
 	public static void main(String[] args) {
-		SpringApplication.run(OnlineConferenceReviewSystemApplication.class, args);
+		SpringApplication.run(OnlineConference.class, args);
 	}
 
 }
