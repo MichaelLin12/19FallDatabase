@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -176,7 +176,7 @@ button.register_register:hover{background-color:#191970;}
 		<br>
 		<p id="description">Inspiration Awaits</p>
 		<button class="register title" id="Register"
-			onclick="removeButtonRegister()">Register</button>
+			 th:action="@{/register}" >Register</button>
 		<button class="login title" id="Login" onclick="removeButtonLogin()">Login</button>
 	</div>
 </body>

@@ -12,7 +12,7 @@ public class TitleController {
 	private static final Logger logger = LoggerFactory.getLogger(TitleController.class);
 	
 	@RequestMapping(value="/title",method= RequestMethod.GET)
-	public String title()
+	public String displayTitle()
 	{
 		return "conference_view";
 	}

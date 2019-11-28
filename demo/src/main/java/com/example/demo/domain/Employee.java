@@ -5,7 +5,7 @@ public class Employee {
 	private String fname;
 	private String lname;
 	private String ssn;
-	
+	private String dno;
 	
 	
 	
@@ -55,6 +55,12 @@ public class Employee {
 	 */
 	public void setSsn(String ssn) {
 		this.ssn = ssn;
+	}
+	public String getDno() {
+		return dno;
+	}
+	public void setDno(String dno) {
+		this.dno = dno;
 	}
 
 	
