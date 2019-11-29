@@ -1,5 +1,7 @@
 package com.example.service;
 
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Component;
 
 import com.example.dao.ParticipatorDAO;
@@ -9,8 +11,9 @@ import com.example.entity.Participator;
 public class ParticipatorService {
 	private ParticipatorDAO participatorDAO = new ParticipatorDAO();
 
-	public void verifyParticipator(Participator participator)
+	public ArrayList<Participator> verifyParticipator(Participator participator)
 	{
-		participatorDAO.verify(participator);
+		ArrayList<Participator> verification=participatorDAO.verify(participator);
+		return verification;
 	}
 }

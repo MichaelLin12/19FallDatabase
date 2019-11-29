@@ -21,13 +21,13 @@ public class EmployeeDAO {
 		empList = companyMapper.getEmpList();
 		
 		
-		/*
-		 * Employee e1 = new Employee("John", "Smith", "123456"); Employee e2 = new
-		 * Employee("Sally", "jones", "234567"); Employee e3 = new Employee("Praveen",
-		 * "M", "345678");
-		 * 
-		 * empList.add(e1); empList.add(e2); empList.add(e3);
-		 */
+		
+		 //Employee e1 = new Employee("John", "Smith", "123456"); Employee e2 = new
+		 //Employee("Sally", "jones", "234567"); Employee e3 = new Employee("Praveen",
+		 //"M", "345678");
+		 
+		 //empList.add(e1); empList.add(e2); empList.add(e3);
+		 
 		return empList;
 	}
 

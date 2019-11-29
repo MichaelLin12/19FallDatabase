@@ -86,4 +86,11 @@ public class Participator {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	@Override
+	public String toString() {
+		return "Participator [fname=" + fname + ", email=" + email + ", lname=" + lname + ", minit=" + minit
+				+ ", phone=" + phone + ", affiliation=" + affiliation + ", password=" + password + "]";
+	}
+	
 }

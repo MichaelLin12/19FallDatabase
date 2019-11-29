@@ -33,7 +33,7 @@ public class CompanyController {
     	
     	List<Employee> empList = new ArrayList<Employee>();
     	
-    	//empService = new EmployeeService();    	
+    	empService = new EmployeeService();    	
     	
     	empList = empService.getEmpList();
     	

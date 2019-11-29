@@ -18,7 +18,7 @@ EmployeeDAO employeeDAO;
 	public List<Employee> getEmpList() {
 		List<Employee> empList = new ArrayList<Employee>();
 		
-		//EmployeeDAO employeeDAO = new EmployeeDAO();
+		EmployeeDAO employeeDAO = new EmployeeDAO();
 		
 		empList = employeeDAO.getEmpList();
 		
