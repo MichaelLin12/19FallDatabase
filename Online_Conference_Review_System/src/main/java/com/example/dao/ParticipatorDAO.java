@@ -11,7 +11,7 @@ import com.example.mapper.ConferenceMapper;
 @Component
 public class ParticipatorDAO {
 	@Autowired
-	private ConferenceMapper mapper;
+	ConferenceMapper mapper;//this is null
 	
 	public ArrayList<Participator> verify(Participator participator) {
 		System.out.println(mapper);
