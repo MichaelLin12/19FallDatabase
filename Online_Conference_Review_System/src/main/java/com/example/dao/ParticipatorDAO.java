@@ -11,12 +11,12 @@ import com.example.mapper.ConferenceMapper;
 @Component
 public class ParticipatorDAO {
 	@Autowired
-	private ConferenceMapper mapper;//this is null
+	private ConferenceMapper mapper;
 	
 	public ArrayList<Participator> verify(Participator participator) {
-		System.out.println(mapper);
+		//System.out.println(mapper);
 		ArrayList<Participator> verification=mapper.verify(participator);
-		System.out.println(verification);
+		//System.out.println(verification);
 		return verification;
 	}
 

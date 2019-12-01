@@ -56,7 +56,7 @@ input[type=submit]:hover {
 </head>
 <body>
 	<div>
-		<form th:action="@{/login_review}" th:object="${login}" method="post" class="style_title_login"
+		<form th:action="@{/redirect_login}" th:object="${login}" method="post" class="style_title_login"
 			id="Login_form">
 			Email:<br> <input type="email" name="Email" id="Lemail" th:field="*{email}">
 			<br> Password:<br> <input type="password" name="Password"
