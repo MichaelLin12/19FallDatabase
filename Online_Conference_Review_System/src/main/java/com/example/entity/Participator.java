@@ -1,5 +1,8 @@
 package com.example.entity;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Participator {
 	String fname;
 	String email;
