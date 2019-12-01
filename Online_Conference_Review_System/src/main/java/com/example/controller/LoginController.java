@@ -1,8 +1,9 @@
-package com.example.demo;
+package com.example.controller;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,6 +15,8 @@ import com.example.service.ParticipatorService;
 
 @Controller
 public class LoginController {
+	@Autowired
+	ParticipatorService service;
 	
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public String displayLogin(@ModelAttribute Participator participator, Model model)
@@ -27,7 +30,7 @@ public class LoginController {
 	@RequestMapping(value="/login_review",method=RequestMethod.POST)
 	public String displayReviewedLogin(@ModelAttribute Participator participator, Model model)
 	{
-		ParticipatorService service=new ParticipatorService();
+		//ParticipatorService service=new ParticipatorService();
 		ArrayList<Participator> verification=service.verifyParticipator(participator);
 		if(verification.size() == 0)
 		{
