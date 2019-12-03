@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Online Conference Review System</title>
@@ -66,6 +66,8 @@ body,html
   	background-repeat: no-repeat;
  	background-size: cover;
 }
+.white{color:#FFFFFF}
+.blue{color:#191970}
   input[type=text], select {
   padding: 8px 16px;
   margin: 4px 0;
@@ -109,6 +111,15 @@ input[type=submit] {
   border: 1px solid #FFFFFF;
   border-radius: 4px;
   cursor: pointer;
+  position: absolute;
+  left: 50%;
+  top: 85%;
+  transform: translate(-50%, -50%);
+  border-radius:12px;
+  padding: 10px 20px;
+  border: 2px solid #FFFFFF;
+  cursor: pointer;
+  font-size: 24px;
 }
 
 input[type=submit]:hover {
@@ -142,92 +153,87 @@ input[type=submit]:hover {
 	color:#191970;
 }
 
-.radio
+.radio1
 {
 	position: absolute;
-  	left: 50%;
+  	left: 40%;
   	top: 75%;
   	transform: translate(-50%, -50%);
 }
-button.register_register
+.label1
 {
-	border-radius:12px;
-  	padding: 10px 20px;
-  	font-size: 24px;
-  	cursor: pointer;
-  	text-align: center;
-  	background-color:transparent;
-	border: 2px solid #FFFFFF;
 	position: absolute;
-  	left: 50%;
-  	top: 90%;
+  	left: 44%;
+  	top: 75%;
   	transform: translate(-50%, -50%);
-  	color:#FFFFFF;
 }
-
-button.register_register:hover{background-color:#191970;}
+.radio2
+{
+	position: absolute;
+  	left: 48%;
+  	top: 75%;
+  	transform: translate(-50%, -50%);
+}
+.label2
+{
+	position: absolute;
+  	left: 52%;
+  	top: 75%;
+  	transform: translate(-50%, -50%);
+}
+.radio3
+{
+	position: absolute;
+  	left: 56%;
+  	top: 75%;
+  	transform: translate(-50%, -50%);
+}
+.label3
+{
+	position: absolute;
+  	left: 59%;
+  	top: 75%;
+  	transform: translate(-50%, -50%);
+}
 </style>
 </head>
 <body>
+<form th:action="@{/register_review}" th:object="${register}" method="post">
 	<div>
 		<div class="grid-container" id="register_grid">
 			<div>
-				<form class="style_title_register_dark" id="register_form1"
-					action="">
-					First name:<br> <input type="text" name="fname" id="Rfname">
-				</form>
+					First name:<br> <input type="text" class="style_title_register_dark" th:field="${fname}" name="fname" id="Rfname">
 			</div>
 			<div>
-				<form class="style_title_register_dark" id="register_form2"
-					action="">
-					Email:<br> <input type="email" name="Email" id="Remail">
-				</form>
+					Email:<br> <input type="email" class="style_title_register_dark" th:field="${email}" name="Email" id="Remail">
 			</div>
 			<div>
-				<form class="style_title_register_dark" id="register_form3"
-					action="">
-					Middle initial:<br> <input type="text" name="Middle"
+					Middle initial:<br> <input class="style_title_register_dark" th:field="${minit}" type="text" name="Middle"
 						id="Rminit">
-				</form>
 			</div>
 			<div>
-				<form class="style_title_register_dark" id="register_form4"
-					action="">
-					Phone number:<br> <input type="number" name="phone"
+					Phone number:<br> <input class="style_title_register_dark" th:field="${phone}" type="text" name="phone"
 						id="Rphone">
-				</form>
 			</div>
 			<div>
-				<form class="style_title_register_dark" id="register_form5"
-					action="">
-					Last name:<br> <input type="text" name="Lastname" id="Rlname">
-				</form>
+					Last name:<br> <input class="style_title_register_dark" th:field="${lname}" type="text" name="Lastname" id="Rlname">
 			</div>
 			<div>
-				<form class="style_title_register_dark" id="register_form6"
-					action="">
-					Affiliation:<br> <input type="text" name="Affil" id="Raffil">
-				</form>
+					Affiliation:<br> <input class="style_title_register_dark" th:field="${Affil}" type="text" name="Affil" id="Raffil">
 			</div>
 			<div>
-				<form class="style_title_register" id="register_form7" action="">
-					Password:<br> <input type="password" name="Password" id="RP">
-				</form>
+			Password:<br> <input type="password" name="pwd" th:field="${password}">
 			</div>
 			<div>
-				<form class="style_title_register" id="register_form8" action="">
-					Re-type Password:<br> <input type="password" name="Rpassword"
+					<label class=" white" for="Password">Re-type Password:</label><br> <input th:field="${Repassword}" type="password" name="Rpassword"
 						id="RRP">
-				</form>
 			</div>
 		</div>
 	</div>
-	<form class="style_title_register radio" action="/action_page.php"
-		id="role">
-		<br> <input type="radio" name="Rradio" id="RRA">Author <input
-			type="radio" name="Rradio" id="RRR">Reviewer <input
-			type="radio" name="Rradio" id="RRB">Both
+		<input class="style_title_register radio1" type="radio" name="R" id="RRA"><label class="label1 white" for="Author">Author</label>
+		<input class="style_title_register radio2" type="radio" name="R" id="RRRR"><label class="label2 white" for="reviewer">Reviewer</label>
+		<input class="style_title_register radio3" type="radio" name="R" id="RRB"><label class="label3 white" for="both">Both</label> 
+		<input type="submit" class="style_title_register" value="Register" name="Register" id="RRR">
 	</form>
-	<button class="register_register" name="Rsubmit" id="Rsubmit">Register</button>
 </body>
 </html>
