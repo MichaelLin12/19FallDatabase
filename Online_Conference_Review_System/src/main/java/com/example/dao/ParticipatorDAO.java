@@ -14,13 +14,20 @@ public class ParticipatorDAO {
 	private ConferenceMapper mapper;
 	
 	public ArrayList<Participator> verify(Participator participator) {
-		ArrayList<Participator> verification=mapper.verify(participator);
+		ArrayList<Participator> verification=mapper.verifyParticipator(participator);
 		return verification;
 	}
 
-	public void insert(Participator participator) {
-		mapper.insert(participator);
-		
+	public void insertParticipator(Participator participator) {
+		mapper.insertParticipator(participator);	
+	}
+	
+	public void insertAuthor(Participator participator) {
+		mapper.insertAuthor(participator);	
+	}
+	
+	public void insertReviewer(Participator participator) {
+		mapper.insertReviewer(participator);	
 	}
 
 }

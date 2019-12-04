@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style type="text/css">
+body,html
+{
+	background-color:#FFFFFF;
+	overflow:hidden;
+	height: 100%;
+  	background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
+
+  	background-position: center;
+  	background-repeat: no-repeat;
+ 	background-size: cover;
+}
+  input[type=text], select {
+  padding: 8px 16px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+.style_title
+{
+	color:#FFFFFF;
+	border: 2px solid #FFFFFF;
+	background-color:transparent;
+	border-radius:12px;
+  	padding: 10px 20px;
+  	font-size: 24px;
+  	cursor: pointer;
+  	text-align: center;
+}
+
+.style_title:hover
+{
+	background-color: #191970
+}
+.placement
+{
+	color:#191970;
+	position:absolute;
+	left: 50%;
+  	top: 50%;
+  	transform: translate(-50%, -50%);
+}
+p
+{
+	color:#FFFFFF;
+	font-family:"Times New Roman";
+	font-size: 18px;
+	position: absolute;
+  	left: 50%;
+  	top: 20%;
+  	transform: translate(-50%, -50%);
+}
+</style>
+</head>
+<body>
+<p>Press Add(no input) to move on to the next page<br>Press Add(with input) to add a topic</p>
+<form action="#" th:action="@{/redirect_topic}" th:object="${topic}" method="post" class="placement">
+  Topic of Interest:<br>
+  <input type="text" name="topics" >
+  <br><br>
+  <input class="style_title" type="submit" value="Add">
+</form> 
+</body>
+</html>

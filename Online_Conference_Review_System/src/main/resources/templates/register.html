@@ -164,7 +164,7 @@ input[type=submit]:hover {
 </style>
 </head>
 <body>
-<form action="#" th:action="@{/register_review}" th:object="${register}" method="post">
+<form action="#" th:action="@{/redirect_registration}" th:object="${register}" method="post">
 	<div>
 		<div class="grid-container" id="register_grid">
 			<div>
@@ -174,11 +174,11 @@ input[type=submit]:hover {
 					Email:<br> <input type="email" class="style_title_register_dark" required="required" th:field="*{email}" name="Email" id="Remail">
 			</div>
 			<div>
-					Middle initial:<br> <input class="style_title_register_dark" required="required" th:field="*{minit}" type="text" name="Middle"
+					Middle initial:<br> <input class="style_title_register_dark" th:field="*{minit}" type="text" name="Middle"
 						id="Rminit">
 			</div>
 			<div>
-					Phone number:<br> <input class="style_title_register_dark" title="A phone number" th:field="*{phone}" type="text" name="phone"
+					Phone number:<br> <input class="style_title_register_dark" maxlength=10 title="A phone number" th:field="*{phone}" type="text" name="phone"
 						id="Rphone">
 			</div>
 			<div>

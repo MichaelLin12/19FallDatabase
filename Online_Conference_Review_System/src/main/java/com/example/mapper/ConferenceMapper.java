@@ -12,9 +12,15 @@ import com.example.entity.Participator;
 public interface ConferenceMapper {
 
 	@Select("SELECT EMAIL,PASSWORD FROM PARTICIPATOR WHERE EMAIL=#{email} and PASSWORD=#{password} ")
-	public ArrayList<Participator> verify(Participator participator);
+	public ArrayList<Participator> verifyParticipator(Participator participator);
 
 	@Insert("insert into participator values (#{email}, #{fname}, #{minit}, #{lname}, #{phone}, #{affiliation}, #{password})")
-	public void insert(Participator participator);
+	public void insertParticipator(Participator participator);
+
+	@Insert("insert into author values (#{email})")
+	public void insertAuthor(Participator participator);
+	
+	@Insert("insert into reviewer values (#{email})")
+	public void insertReviewer(Participator participator);
 
 }

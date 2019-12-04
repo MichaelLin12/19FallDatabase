@@ -21,6 +21,14 @@ public class ParticipatorService {
 	
 	public void insertParticipator(Participator participator)
 	{
-		participatorDAO.insert(participator);
+		participatorDAO.insertParticipator(participator);
+	}
+	
+	public void insertAuthor(Participator participator) {
+		participatorDAO.insertAuthor(participator);	
+	}
+	
+	public void insertReviewer(Participator participator) {
+		participatorDAO.insertReviewer(participator);
 	}
 }

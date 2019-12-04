@@ -40,7 +40,7 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/redirect_login",method=RequestMethod.POST)
-	public ModelAndView RedirectLogin(@ModelAttribute Participator participator, Model model, HttpServletRequest request)
+	public ModelAndView redirectLogin(@ModelAttribute Participator participator, Model model, HttpServletRequest request)
 	{
 		ArrayList<Participator> verification=service.verifyParticipator(participator);
 		if(verification.size() == 0)
