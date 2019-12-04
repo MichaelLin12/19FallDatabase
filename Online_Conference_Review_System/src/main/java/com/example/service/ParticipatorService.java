@@ -11,11 +11,16 @@ import com.example.entity.Participator;
 @Component
 public class ParticipatorService {
 	@Autowired
-	private ParticipatorDAO participatorDAO;// = new ParticipatorDAO();
+	private ParticipatorDAO participatorDAO;
 
 	public ArrayList<Participator> verifyParticipator(Participator participator)
 	{
 		ArrayList<Participator> verification=participatorDAO.verify(participator);
 		return verification;
+	}
+	
+	public void insertParticipator(Participator participator)
+	{
+		participatorDAO.insert(participator);
 	}
 }

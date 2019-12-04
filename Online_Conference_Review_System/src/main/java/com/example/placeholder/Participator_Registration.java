@@ -10,9 +10,10 @@ public class Participator_Registration {
 	private String affiliation;
 	private String password;
 	private String repassword;
+	private String conType;
 	
 	public Participator_Registration(String fname, String email, String lname, String minit, String phone,
-			String affiliation, String password, String repassword) {
+			String affiliation, String password, String repassword,String conType) {
 		super();
 		this.fname = fname;
 		this.email = email;
@@ -22,6 +23,7 @@ public class Participator_Registration {
 		this.affiliation = affiliation;
 		this.password = password;
 		this.repassword = repassword;
+		this.conType=conType;
 	}
 	
 	public Participator_Registration()
@@ -35,6 +37,7 @@ public class Participator_Registration {
 		this.affiliation = "";
 		this.password = "";
 		this.repassword = "";
+		this.conType="";
 	}
 	
 	public String getFname() {
@@ -84,5 +87,13 @@ public class Participator_Registration {
 	}
 	public void setRepassword(String repassword) {
 		this.repassword = repassword;
+	}
+	
+	public String getConType() {
+		return conType;
+	}
+	
+	public void setConType(String conType) {
+		this.conType=conType;
 	}
 }

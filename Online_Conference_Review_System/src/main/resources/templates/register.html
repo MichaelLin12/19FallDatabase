@@ -153,46 +153,12 @@ input[type=submit]:hover {
 	color:#191970;
 }
 
-.radio1
+.style_drop_down
 {
-	position: absolute;
-  	left: 40%;
-  	top: 75%;
-  	transform: translate(-50%, -50%);
-}
-.label1
-{
-	position: absolute;
-  	left: 44%;
-  	top: 75%;
-  	transform: translate(-50%, -50%);
-}
-.radio2
-{
-	position: absolute;
-  	left: 48%;
-  	top: 75%;
-  	transform: translate(-50%, -50%);
-}
-.label2
-{
-	position: absolute;
-  	left: 52%;
-  	top: 75%;
-  	transform: translate(-50%, -50%);
-}
-.radio3
-{
-	position: absolute;
-  	left: 56%;
-  	top: 75%;
-  	transform: translate(-50%, -50%);
-}
-.label3
-{
-	position: absolute;
-  	left: 59%;
-  	top: 75%;
+	color:#191970;
+	position:absolute;
+	left: 50%;
+  	top: 72%;
   	transform: translate(-50%, -50%);
 }
 </style>
@@ -202,37 +168,40 @@ input[type=submit]:hover {
 	<div>
 		<div class="grid-container" id="register_grid">
 			<div>
-					First name:<br> <input type="text" class="style_title_register_dark" th:field="*{fname}" name="fname" id="Rfname">
+					First name:<br> <input type="text" class="style_title_register_dark" required="required" th:field="*{fname}" name="fname" id="Rfname">
 			</div>
 			<div>
-					Email:<br> <input type="email" class="style_title_register_dark" th:field="*{email}" name="Email" id="Remail">
+					Email:<br> <input type="email" class="style_title_register_dark" required="required" th:field="*{email}" name="Email" id="Remail">
 			</div>
 			<div>
-					Middle initial:<br> <input class="style_title_register_dark" th:field="*{minit}" type="text" name="Middle"
+					Middle initial:<br> <input class="style_title_register_dark" required="required" th:field="*{minit}" type="text" name="Middle"
 						id="Rminit">
 			</div>
 			<div>
-					Phone number:<br> <input class="style_title_register_dark" th:field="*{phone}" type="text" name="phone"
+					Phone number:<br> <input class="style_title_register_dark" title="A phone number" th:field="*{phone}" type="text" name="phone"
 						id="Rphone">
 			</div>
 			<div>
-					Last name:<br> <input class="style_title_register_dark" th:field="*{lname}" type="text" name="Lastname" id="Rlname">
+					Last name:<br> <input class="style_title_register_dark" required="required" th:field="*{lname}" type="text" name="Lastname" id="Rlname">
 			</div>
 			<div>
-					Affiliation:<br> <input class="style_title_register_dark" th:field="*{affiliation}" type="text" name="Affil" id="Raffil">
+					Affiliation:<br> <input class="style_title_register_dark" required="required" th:field="*{affiliation}" type="text" name="Affil" id="Raffil">
 			</div>
 			<div>
-			Password:<br> <input type="password" name="pwd" th:field="*{password}">
+			Password:<br> <input type="password" name="pwd" required="required" th:field="*{password}">
 			</div>
 			<div>
-					<label class=" white" for="Password">Re-type Password:</label><br> <input th:field="*{repassword}" type="password" name="Rpassword"
+					<label class=" white" for="Password">Re-type Password:</label><br> <input required="required" th:field="*{repassword}" type="password" name="Rpassword"
 						id="RRP">
 			</div>
 		</div>
 	</div>
-		<input class="style_title_register radio1" type="radio" name="R" id="RRA"><label class="label1 white" for="Author">Author</label>
-		<input class="style_title_register radio2" type="radio" name="R" id="RRRR"><label class="label2 white" for="reviewer">Reviewer</label>
-		<input class="style_title_register radio3" type="radio" name="R" id="RRB"><label class="label3 white" for="both">Both</label> 
+		<select required class="style_drop_down" name="Participator" th:field="*{conType}">
+    		<option th:each="selectedType: ${conType}"
+      				th:value="${selectedType}"
+      				th:text="${selectedType}">
+      				</option>
+ 		</select>
 		<input type="submit" class="style_title_register" value="Register" name="Register" id="RRR">
 	</form>
 </body>
