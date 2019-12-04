@@ -7,36 +7,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.entity.Participator;
+import com.example.placeholder.Participator_Registration;
 
 @Controller
 public class RegisterController {
 
 	@RequestMapping(value="/register",method=RequestMethod.GET)
-	public String displayRegister(@ModelAttribute String string,Model model)
+	public String displayRegister(@ModelAttribute Participator_Registration participator,Model model)
 	{
-		model.addAttribute("fname","fname");
-		model.addAttribute("lname","");
-		model.addAttribute("minit","");
-		model.addAttribute("email","");
-		model.addAttribute("phone","");
-		model.addAttribute("Affil","");
-		model.addAttribute("password","");
-		model.addAttribute("Repassword","");
+		participator= new Participator_Registration();
+		model.addAttribute("register", participator);
 		return "register";
 	}
 	
 	@RequestMapping(value="/register_review",method=RequestMethod.POST)
-	public String displayRegisterReview(@ModelAttribute String register,Model model)
+	public String displayRegisterReview(@ModelAttribute Participator_Registration participator,Model model)
 	{
-		System.out.print(register);
-		model.addAttribute("fname",register);
-		model.addAttribute("lname",register);
-		model.addAttribute("minit",register);
-		model.addAttribute("email",register);
-		model.addAttribute("phone",register);
-		model.addAttribute("Affil",register);
-		model.addAttribute("password",register);
-		model.addAttribute("Repassword",register);
+		model.addAttribute("register",participator);
 		return "register";
 	}
 }

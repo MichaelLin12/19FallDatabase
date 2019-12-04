@@ -198,34 +198,34 @@ input[type=submit]:hover {
 </style>
 </head>
 <body>
-<form th:action="@{/register_review}" th:object="${register}" method="post">
+<form action="#" th:action="@{/register_review}" th:object="${register}" method="post">
 	<div>
 		<div class="grid-container" id="register_grid">
 			<div>
-					First name:<br> <input type="text" class="style_title_register_dark" th:field="${fname}" name="fname" id="Rfname">
+					First name:<br> <input type="text" class="style_title_register_dark" th:field="*{fname}" name="fname" id="Rfname">
 			</div>
 			<div>
-					Email:<br> <input type="email" class="style_title_register_dark" th:field="${email}" name="Email" id="Remail">
+					Email:<br> <input type="email" class="style_title_register_dark" th:field="*{email}" name="Email" id="Remail">
 			</div>
 			<div>
-					Middle initial:<br> <input class="style_title_register_dark" th:field="${minit}" type="text" name="Middle"
+					Middle initial:<br> <input class="style_title_register_dark" th:field="*{minit}" type="text" name="Middle"
 						id="Rminit">
 			</div>
 			<div>
-					Phone number:<br> <input class="style_title_register_dark" th:field="${phone}" type="text" name="phone"
+					Phone number:<br> <input class="style_title_register_dark" th:field="*{phone}" type="text" name="phone"
 						id="Rphone">
 			</div>
 			<div>
-					Last name:<br> <input class="style_title_register_dark" th:field="${lname}" type="text" name="Lastname" id="Rlname">
+					Last name:<br> <input class="style_title_register_dark" th:field="*{lname}" type="text" name="Lastname" id="Rlname">
 			</div>
 			<div>
-					Affiliation:<br> <input class="style_title_register_dark" th:field="${Affil}" type="text" name="Affil" id="Raffil">
+					Affiliation:<br> <input class="style_title_register_dark" th:field="*{affiliation}" type="text" name="Affil" id="Raffil">
 			</div>
 			<div>
-			Password:<br> <input type="password" name="pwd" th:field="${password}">
+			Password:<br> <input type="password" name="pwd" th:field="*{password}">
 			</div>
 			<div>
-					<label class=" white" for="Password">Re-type Password:</label><br> <input th:field="${Repassword}" type="password" name="Rpassword"
+					<label class=" white" for="Password">Re-type Password:</label><br> <input th:field="*{repassword}" type="password" name="Rpassword"
 						id="RRP">
 			</div>
 		</div>
