@@ -29,6 +29,7 @@ public class LoginController {
 	{
 		participator= new Participator("","","","","","","");
 		model.addAttribute("login", participator);
+		model.addAttribute("incorrect","");
 		return "login";
 	}
 	
@@ -36,6 +37,7 @@ public class LoginController {
 	public String displayLoginReview(@ModelAttribute Participator participator, Model model)
 	{
 		model.addAttribute("login", participator);
+		model.addAttribute("incorrect","Incorrect email and/or password");
 		return "login";
 	}
 	
@@ -48,8 +50,13 @@ public class LoginController {
 			request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.PERMANENT_REDIRECT);
 			return new ModelAndView("redirect:/login");
 		}
-			
+		boolean reviewer = service.verifyReviewer(participator);
+		if(reviewer)
+		{
+			request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.PERMANENT_REDIRECT);
+			return new ModelAndView("redirect:/dashboard");
+		}
 		request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.PERMANENT_REDIRECT);
-		return new ModelAndView("redirect:/dashboard");
+		return new ModelAndView("redirect:/authorPage");
 	}
 }

@@ -61,9 +61,9 @@ p
 </head>
 <body>
 <p>Press Add(no input) to move on to the next page<br>Press Add(with input) to add a topic</p>
-<form action="#" th:action="@{/redirect_topic}" th:object="${topic}" method="post" class="placement">
+<form th:action="@{/redirect_topic}" th:object="${topics}" method="post" class="placement">
   Topic of Interest:<br>
-  <input type="text" name="topics" >
+  <input type="text" name="topic" th:field=*{topic}>
   <br><br>
   <input class="style_title" type="submit" value="Add">
 </form> 

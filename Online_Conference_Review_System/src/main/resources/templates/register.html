@@ -11,76 +11,21 @@ p
 	font-size: 18px;
 	position: absolute;
   	left: 50%;
-  	top: 30%;
+  	top: 10%;
   	transform: translate(-50%, -50%);
 }
-h1.title
-{
-	color:#191970;
-	font-family:"Impact";
-	font-size: 38px;
-	position: absolute;
-  	left: 50%;
-  	top: 20%;
-  	transform: translate(-50%, -50%);
-}
-button.title
-{
-	border-radius:12px;
-  	padding: 10px 20px;
-  	font-size: 24px;
-  	cursor: pointer;
-  	text-align: center;
-  	background-color:transparent;
-}
-button.register
-{
-	color:#191970;
-	border: 2px solid #191970;
-	position: absolute;
-  	left: 50%;
-  	top: 50%;
-  	transform: translate(-50%, -50%);
-}
-button.register:hover {background-color: #FFFFFF}
-
-button.login
-{
-	color:#FFFFFF;
-	border: 2px solid #FFFFFF;
-	position: absolute;
-  	left: 50%;
-  	top: 65%;
-  	transform: translate(-50%, -50%);
-}
-
-button.login:hover {background-color: #191970}
 body,html
 {
-	background-color:#FFFFFF;
 	overflow:hidden;
 	height: 100%;
-  	background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
-
-  	background-position: center;
-  	background-repeat: no-repeat;
- 	background-size: cover;
 }
-.white{color:#FFFFFF}
+.white{color:#696969}
 .blue{color:#191970}
   input[type=text], select {
   padding: 8px 16px;
   margin: 4px 0;
   display: inline-block;
-  border: 1px solid #FFFFFF;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-  input[type=number], select {
-  padding: 8px 16px;
-  margin: 4px 0;
-  display: inline-block;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #696969;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -88,7 +33,7 @@ input[type=password], select {
   padding: 8px 16px;
   margin: 4px 0;
   display: inline-block;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #696969;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -96,19 +41,16 @@ input[type=email], select {
   padding: 8px 16px;
   margin: 4px 0;
   display: inline-block;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #696969;
   border-radius: 4px;
   box-sizing: border-box;
 }
-input[type="radio"] {
-  margin-right: 0px;
-}
 input[type=submit] {
   background-color: transparent;
-  color: #FFFFFF;
+  color: #696969;
   padding: 10px 16px;
   margin: 4px 0;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #696969;
   border-radius: 4px;
   cursor: pointer;
   position: absolute;
@@ -117,7 +59,7 @@ input[type=submit] {
   transform: translate(-50%, -50%);
   border-radius:12px;
   padding: 10px 20px;
-  border: 2px solid #FFFFFF;
+  border: 2px solid #696969;
   cursor: pointer;
   font-size: 24px;
 }
@@ -146,7 +88,7 @@ input[type=submit]:hover {
 }
 .style_title_register
 {
-	color:#FFFFFF;
+	color:#696969;
 }
 .style_title_register_dark
 {
@@ -164,6 +106,7 @@ input[type=submit]:hover {
 </style>
 </head>
 <body>
+<p th:text=${incorrect}></p>
 <form action="#" th:action="@{/redirect_registration}" th:object="${register}" method="post">
 	<div>
 		<div class="grid-container" id="register_grid">

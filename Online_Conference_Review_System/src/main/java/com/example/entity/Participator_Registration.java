@@ -1,4 +1,4 @@
-package com.example.placeholder;
+package com.example.entity;
 
 public class Participator_Registration {
 	

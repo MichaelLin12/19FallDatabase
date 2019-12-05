@@ -4,6 +4,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Online Conference Review System</title>
 <style type="text/css">
+p
+{
+	color:D;
+	font-family:"Times New Roman";
+	font-size: 18px;
+	position: absolute;
+  	left: 50%;
+  	top: 20%;
+  	transform: translate(-50%, -50%);
+}
 .style_title_login
 {
 	color:#191970;
@@ -14,20 +24,14 @@
 }
 body,html
 {
-	background-color:#FFFFFF;
 	overflow:hidden;
 	height: 100%;
-  	background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
-
-  	background-position: center;
-  	background-repeat: no-repeat;
- 	background-size: cover;
 }
 input[type=password], select {
   padding: 8px 16px;
   margin: 4px 0;
   display: inline-block;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #696969;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -35,16 +39,16 @@ input[type=email], select {
   padding: 8px 16px;
   margin: 4px 0;
   display: inline-block;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #696969;
   border-radius: 4px;
   box-sizing: border-box;
 }
 input[type=submit] {
   background-color: transparent;
-  color: #FFFFFF;
+  color: #696969;
   padding: 10px 16px;
   margin: 4px 0;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #696969;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -55,12 +59,13 @@ input[type=submit]:hover {
 </style>
 </head>
 <body>
+<p th:text="${incorrect}"></p>
 	<div>
 		<form th:action="@{/redirect_login}" th:object="${login}" method="post" class="style_title_login"
 			id="Login_form">
-			Email:<br> <input type="email" name="Email" id="Lemail" th:field="*{email}">
+			Email:<br> <input type="email" name="Email" id="Lemail" th:field="*{email}" required>
 			<br> Password:<br> <input type="password" name="Password"
-				id="LPassword" th:field="*{password}"> <br> <br> <input
+				id="LPassword" th:field="*{password}" required> <br> <br> <input
 				type="submit" value="Login" id="login">
 		</form>
 	</div>
