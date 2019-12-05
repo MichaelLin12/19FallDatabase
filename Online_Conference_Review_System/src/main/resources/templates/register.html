@@ -111,10 +111,10 @@ input[type=submit]:hover {
 	<div>
 		<div class="grid-container" id="register_grid">
 			<div>
-					First name:<br> <input type="text" class="style_title_register_dark" required="required" th:field="*{fname}" name="fname" id="Rfname">
+					First name:<br> <input type="text" maxlength=25 class="style_title_register_dark" required="required" th:field="*{fname}" name="fname" id="Rfname">
 			</div>
 			<div>
-					Email:<br> <input type="email" class="style_title_register_dark" required="required" th:field="*{email}" name="Email" id="Remail">
+					Email:<br> <input type="email" maxlength=30 class="style_title_register_dark" required="required" th:field="*{email}" name="Email" id="Remail">
 			</div>
 			<div>
 					Middle initial:<br> <input class="style_title_register_dark" th:field="*{minit}" type="text" name="Middle"
@@ -125,16 +125,16 @@ input[type=submit]:hover {
 						id="Rphone">
 			</div>
 			<div>
-					Last name:<br> <input class="style_title_register_dark" required="required" th:field="*{lname}" type="text" name="Lastname" id="Rlname">
+					Last name:<br> <input class="style_title_register_dark" maxlength=25 required="required" th:field="*{lname}" type="text" name="Lastname" id="Rlname">
 			</div>
 			<div>
-					Affiliation:<br> <input class="style_title_register_dark" required="required" th:field="*{affiliation}" type="text" name="Affil" id="Raffil">
+					Affiliation:<br> <input class="style_title_register_dark" maxlength=25 required="required" th:field="*{affiliation}" type="text" name="Affil" id="Raffil">
 			</div>
 			<div>
-			Password:<br> <input type="password" name="pwd" required="required" th:field="*{password}">
+			Password:<br> <input maxlength=15 type="password" name="pwd" required="required" th:field="*{password}">
 			</div>
 			<div>
-					<label class=" white" for="Password">Re-type Password:</label><br> <input required="required" th:field="*{repassword}" type="password" name="Rpassword"
+					<label class=" white" for="Password">Re-type Password:</label><br> <input maxlength=15 required="required" th:field="*{repassword}" type="password" name="Rpassword"
 						id="RRP">
 			</div>
 		</div>
