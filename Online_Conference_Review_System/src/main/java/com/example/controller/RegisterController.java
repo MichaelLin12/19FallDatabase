@@ -1,11 +1,9 @@
 package com.example.controller;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +23,7 @@ import org.springframework.web.servlet.View;
 
 import com.example.entity.Participator;
 import com.example.entity.Participator_Registration;
+import com.example.entity.Review;
 import com.example.entity.Topics_of_Interest;
 import com.example.service.ParticipatorService;
 
@@ -189,5 +188,15 @@ public class RegisterController {
 				string+=String.valueOf((char) temp);
 			}
 			return string;
+		}
+		@ExceptionHandler(SQLIntegrityConstraintViolationException.class)
+		public ModelAndView handleIntegrityException(SQLIntegrityConstraintViolationException e, HttpServletRequest request)
+		{
+			request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.PERMANENT_REDIRECT);
+		    ModelAndView mav = new ModelAndView();
+		    //mav.addObject("review", review);
+		    mav.addObject("incorrect","duplicate interest of topic");
+		    mav.setViewName("review");
+		    return mav;
 		}
 }

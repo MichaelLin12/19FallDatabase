@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="dashboard.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -12,8 +12,7 @@
 </head>
 
 <body>
-
-
+	<p th:text=${incorrect}></p>
     <button class="paper" data-toggle="modal" data-target="#exampleModalCenter">Paper 1</button>
 
     <!-- Modal -->
@@ -29,74 +28,50 @@
                 </div>
 
                 <div class="modal-body">
-                    <form class="review-form">
-                        <div class="input-group">
-                            <input type="text" name="email" autocomplete="off" required />
-                            <label>Review Email</label>
-                        </div>
+                    <form class="review-form" action="#" th:action="@{/redirect_review}" th:object="${review}" method="post">
 
                         <div class="input-group">
-                            <input type="text" name="paperid" autocomplete="off" required />
-                            <label>Paper Id</label>
-                        </div>
-
-                        <div class="input-group">
-                            <input type="date" name="reviewdate" />
-                            <label>Review Date</label>
-                        </div>
-
-                        <div class="input-group">
-                            <select name="techmerit" required>
-                            <option value="" disabled>Select Merit</option>
-                            <option value=1>1</option>
-                            <option value=2>2</option>
-                            <option value=3>3</option>
-                            <option value=4>4</option>
-                            <option value=5>5</option>
-                            <option value=6>6</option>
-                            <option value=7>7</option>
-                            <option value=8>8</option>
-                            <option value=9>9</option>
-                            <option value=10>10</option>
-                            </select>
+                            <input type="number" th:field="*{tech}" name="readability" autocomplete="off" required />
                             <label>Tech Merit</label>
                         </div>
 
                         <div class="input-group">
-                            <input type="text" name="readability" autocomplete="off" required />
+                            <input type="number" th:field="*{readability}" name="readability" autocomplete="off" required />
                             <label>Readability</label>
                         </div>
 
                         <div class="input-group">
-                            <input type="text" name="originality" autocomplete="off" required />
+                            <input type="number" th:field="*{originality}" name="originality" autocomplete="off" required />
                             <label>Originality</label>
                         </div>
 
                         <div class="input-group">
-                            <input type="text" name="relevance" autocomplete="off" required />
+                            <input type="number" name="relevance" th:field="*{relevance}" autocomplete="off" required />
                             <label>Relevance</label>
                         </div>
 
                         <div class="input-group">
-                            <input type="text" name="recomm" autocomplete="off" required />
-                            <label>Overall Recommedation</label>
+                            <input type="number" name="recomm" th:field="*{overallRecommendation}" autocomplete="off" required />
+                            <label>Overall Recommendation</label>
                         </div>
 
                         <div class="input-group">
-                            <textarea rows="4" cols="50" name="committeecomment" autocomplete="off" required></textarea>
+                            <textarea rows="4" cols="50" th:field="*{commentForCom}" name="committeecomment" autocomplete="off" required></textarea>
                             <label>Comment For Committee</label>
                         </div>
 
                         <div class="input-group">
-                            <textarea rows="4" cols="50" name="authorcomment" autocomplete="off" required></textarea>
+                            <textarea rows="4" cols="50" th:field="*{commentForAuth}" name="authorcomment" autocomplete="off" required></textarea>
                             <label>Comment For Author</label>
                         </div>
-
+                        <div>
+                            <input type="submit" name="Review" value="Submit Review" autocomplete="off" required />
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn-btm" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn-btm">Review</button>
+
                 </div>
             </div>
         </div>

@@ -1,5 +1,8 @@
 package com.example.controller;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +45,7 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/redirect_login",method=RequestMethod.POST)
-	public ModelAndView redirectLogin(@ModelAttribute Participator participator, Model model, HttpServletRequest request)
+	public ModelAndView redirectLogin(@ModelAttribute Participator participator, Model model, HttpServletRequest request) throws IOException
 	{
 		ArrayList<Participator> verification=service.verifyParticipator(participator);
 		if(verification.size() == 0)
@@ -53,10 +56,18 @@ public class LoginController {
 		boolean reviewer = service.verifyReviewer(participator);
 		if(reviewer)
 		{
+			write("reserve",participator.getEmail());
 			request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.PERMANENT_REDIRECT);
 			return new ModelAndView("redirect:/dashboard");
 		}
 		request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.PERMANENT_REDIRECT);
 		return new ModelAndView("redirect:/authorPage");
+	}
+	
+	private void write(String file, String string) throws IOException {
+		FileWriter fileWriter = new FileWriter(file);
+	    PrintWriter printWriter = new PrintWriter(fileWriter);
+	    printWriter.print(string);
+	    printWriter.close();
 	}
 }

@@ -1,185 +1,96 @@
 <!DOCTYPE html>
-<!-- dashboard.js must be integrated -->
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Dashboard.html</title>
-    <meta charset = "UTF-8" />
-    <style type = "text/css">
-    
-    table {
-      table-layout: auto;
-	  width: 100%;  
-    }
-    
-    td, th {
-      border: 1px solid black;
-    } 
-    </style>
-	<script src="dashboard.js" type="text/javascript"></script>
-	<style>
-		tr:hover {background-color:#f5f5f5;}		
-		.button {
-		  background-color: #4CAF50;
-		  border: 2px solid #4CAF50;
-		  color: white;
-		  padding: 15px 25px;
-		  width: 250px;
-		  text-align: center;
-		  font-size: 16px;
-		  border-radius: 15px;
-		  cursor: pointer;
-		  transition: all 0.5s;
-		  cursor: pointer;
-		}
-		
-		.button:hover {
-		  background-color: black;
-		}		
-		
-		.button:active {
-		  background-color: #3e8e41;
-		  transform: translateY(4px);
-		}
-		
-	</style>
+<title>Dashboard.html</title>
+<meta charset="UTF-8" />
+<style type="text/css">
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+  position:absolute;
+  left: 2%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.next {
+  background-color: #4CAF50;
+  color: white;
+  position:absolute;
+  left: 98%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.round {
+  border-radius: 100%;
+}
+
+input {
+	border-top-style: hidden;
+	border-right-style: hidden;
+	border-left-style: hidden;
+	border-bottom-style: groove;
+	border: transparent;
+}
+
+input[type=text] {
+	background: transparent;
+}
+
+.input {
+	position:absolute;
+	left: 50%;
+  	top: 90%;
+ 	transform: translate(-50%, -50%);
+}
+.middle{
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+}
+.no-outline:focus {
+	outline: none;
+}
+
+table {
+	table-layout: auto;
+	width: 100%;
+}
+
+td, th {
+	border: 1px solid black;
+}
+</style>
 </head>
 <body>
-	<h1>Dashboard</h1>
-	<script>src="dashboard.js"</script>
-	
-	<table>
-		<tr>
-			<th>Index</th>
-			<th>Paper Title</th>
-			<th>Authors</th>
-			<th>Assigned Reviewer</th>
-			<th>Contact Author</th>
-			<th>Date Submitted</th>
-			<th>Rating</th>
-			<th>Select</th>
-		</tr>
-		<tr>
-			<th>01</th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th><input type="radio" name="Res01"><br></th>			
-		</tr>
-		<tr>
-			<th>02</th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th><input type="radio" name="Res02"><br></th>			
-		</tr>
-		<tr>
-			<th>03</th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th><input type="radio" name="Res03"><br></th>			
-		</tr>
-		<tr>
-			<th>04</th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th><input type="radio" name="Res04"><br></th>			
-		</tr>
-		<tr>
-			<th>05</th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th><input type="radio" name="Res05"><br></th>			
-		</tr>
-		<tr>
-			<th>06</th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th><input type="radio" name="Res06"><br></th>			
-		</tr>
-		<tr>
-			<th>07</th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th><input type="radio" name="Res07"><br></th>			
-		</tr>
-		<tr>
-			<th>08</th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th><input type="radio" name="Res08"><br></th>			
-		</tr>
-		<tr>
-			<th>09</th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th><input type="radio" name="Res09"><br></th>			
-		</tr>
-		<tr>
-			<th>10</th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th><input type="radio" name="Res10"><br></th>			
-		</tr>
-		<tr>
-			<th>11</th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th><input type="radio" name="Res11"><br></th>						
-		</tr>
-		<tr>
-			<th>12</th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th><input type="radio" name="Res12"><br></th>						
-		</tr>
-	</table>
-
-	<button class="button">&laquo; Previous</button>
-	<button class="button" onclick="nextButton(name)">Next &raquo;</button>
+<form action="#" th:action="@{/next}" method="post">
+<input type="submit" value="Next">
+</form>
+<form action="#" th:action="@{/previous}" method="post">
+<input type="submit" value="Previous">
+</form>
+<form action="#" th:action="@{/review}" th:object="${paper}" method="get">
+<div class="middle">
+Paper id:<input type="text" class="no-outline" th:field="*{id}" readonly><br>
+Title:<input type="text" class="no-outline" th:field="*{title}"readonly><br>
+File name:<input type="text" class="no-outline" th:field="*{filename}"readonly><br>
+Contact Author:<input type="text" class="no-outline" th:field="*{contactauthoremail}"readonly><br>
+Abstract:<input type="text" class="no-outline" th:field="*{abstract1}"readonly><br>
+Rating:<input type="text" class="no-outline" th:field="*{rating}"readonly>
+</div>
+<input type="submit" class="input" value="Review">
+</form>
 </body>
