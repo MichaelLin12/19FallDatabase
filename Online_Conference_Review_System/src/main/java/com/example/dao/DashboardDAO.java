@@ -1,4 +1,4 @@
-package com.example.demo.dao;
+package com.example.dao;
 
 import java.awt.print.Paper;
 import java.util.ArrayList;
