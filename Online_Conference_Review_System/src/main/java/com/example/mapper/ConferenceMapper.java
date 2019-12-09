@@ -47,6 +47,9 @@ public interface ConferenceMapper {
 
 	@Select("SELECT MIN(paperid) From Paper")
 	public int getMinID();
+	
+	@Select("SELECT * FROM REVIEWS")
+	public List<Dashboard> getPaperList();
 
 	@Insert("INSERT INTO Reviews values(#{email},#{id},#{tech},#{readability},#{originality},#{relevance},#{overallRecommendation},#{commentForCom},#{commentForAuth})")
 	public void insertReview(Review review);
