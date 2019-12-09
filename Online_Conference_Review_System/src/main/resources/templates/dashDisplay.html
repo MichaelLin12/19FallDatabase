@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Dashboard.html</title>
+    <meta charset = "UTF-8" />
+    <style type = "text/css">
+    
+    table {
+      table-layout: auto;
+	  width: 100%;  
+    }
+    
+    td, th {
+      border: 1px solid black;
+    } 
+
+	th {
+  		color: white;
+  		background-color: black;
+	}
+
+	tr:nth-child(even) {
+  		background-color: #dddddd;
+	}
+	
+		tr:hover {background-color:#f5f5f5;}		
+
+		.button {
+		  background-color: green;
+		  border: 2px solid black;
+		  color: white;
+		  padding: 15px 25px;
+		  width: 250px;
+		  text-align: center;
+		  font-size: 16px;
+		  border-radius: 15px;
+		  cursor: pointer;
+		  transition: all 0.5s;
+		  cursor: pointer;
+		}
+		
+		.button:hover {
+		  background-color: black;
+		}		
+		
+		.button:active {
+		  background-color: #3e8e41;
+		  transform: translateY(4px);
+		}
+		
+	</style>
+	
+</head>
+<body>
+
+<table id="rowCtr" class='list'>
+    <thead>
+        <tr>
+            <th> Reviewer Email </th>
+            <th> Paper id </th>
+            <th> Technical Merit </th>
+            <th> Overall Recommendation </th>
+            <th> Comment for Committee </th>
+            <th> Comment for Author </th>
+            <th> Select </th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${paperList.empty}">
+            <td colspan="2"> Nothing to display </td>
+        </tr>
+        <tr th:each="dashboard : ${paperList}">
+            <td th:text="${dashboard.revemail}"> </td>
+            <td th:text="${dashboard.paperid}"> </td>
+            <td th:text="${dashboard.techmerit}"> </td>
+            <td th:text="${dashboard.overallrecomm}"> </td>            
+            <td th:text="${dashboard.commentforcommittee}"> </td>
+            <td th:text="${dashboard.commentforauthor}"> </td>
+            <td><input type="radio" name=abc> </td>
+        </tr>
+    </tbody>
+</table>
+	<br>
+	<button class="button">&laquo; Previous</button>
+	<button class="button" onclick="init(event)" style="position: absolute; right: 0;">Next &raquo;</button>
+	<br>
+	<script src="dashboard.js"></script>
+</body>
+</html>
