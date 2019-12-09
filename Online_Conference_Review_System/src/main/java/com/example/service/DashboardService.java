@@ -7,8 +7,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.example.demo.dao.DashboardDAO;
-import com.example.demo.domain.Dashboard;
+import com.example.dao.DashboardDAO;
+import com.example.entity.Dashboard;
 
 
 @Component
