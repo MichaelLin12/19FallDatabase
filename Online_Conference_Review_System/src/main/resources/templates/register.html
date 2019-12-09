@@ -8,10 +8,20 @@ p
 {
 	color:D;
 	font-family:"Times New Roman";
-	font-size: 18px;
+	font-size: 14px;
 	position: absolute;
   	left: 50%;
-  	top: 10%;
+  	top: 15%;
+  	transform: translate(-50%, -50%);
+}
+h1
+{
+	color:#191970;
+	font-family:"Impact";
+	font-size: 38px;
+	position: absolute;
+  	left: 50%;
+  	top: 5%;
   	transform: translate(-50%, -50%);
 }
 body,html
@@ -106,6 +116,7 @@ input[type=submit]:hover {
 </style>
 </head>
 <body>
+<h1>Conference Review</h1>
 <p th:text=${incorrect}></p>
 <form action="#" th:action="@{/redirect_registration}" th:object="${register}" method="post">
 	<div>

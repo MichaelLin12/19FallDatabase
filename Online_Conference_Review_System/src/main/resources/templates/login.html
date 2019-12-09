@@ -53,12 +53,24 @@ input[type=submit] {
   cursor: pointer;
 }
 
+h1
+{
+	color:#191970;
+	font-family:"Impact";
+	font-size: 38px;
+	position: absolute;
+  	left: 50%;
+  	top: 5%;
+  	transform: translate(-50%, -50%);
+}
+
 input[type=submit]:hover {
   background-color: #191970;
 }
 </style>
 </head>
 <body>
+<h1>Online Conference</h1>
 <p th:text="${incorrect}"></p>
 	<div>
 		<form th:action="@{/redirect_login}" th:object="${login}" method="post" class="style_title_login"

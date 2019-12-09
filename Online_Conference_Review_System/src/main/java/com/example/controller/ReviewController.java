@@ -7,6 +7,7 @@ import java.sql.SQLIntegrityConstraintViolationException;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -79,12 +80,12 @@ public class ReviewController {
 			throw new InvalidAttributeException("Tech Merit must have value 1-10");
 	}
 
-	@ExceptionHandler(SQLIntegrityConstraintViolationException.class)
-	public ModelAndView handleIntegrityException(@ModelAttribute Review review, Model model, HttpServletRequest request)
+	@ExceptionHandler(DuplicateKeyException.class)
+	public ModelAndView handleIntegrityException( HttpServletRequest request)
 	{
 		request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.PERMANENT_REDIRECT);
 	    ModelAndView mav = new ModelAndView();
-	    mav.addObject("review", review);
+	    mav.addObject("review", new Review());
 	    mav.addObject("incorrect","You have already reviewed this paper");
 	    mav.setViewName("review");
 	    return mav;
@@ -92,11 +93,10 @@ public class ReviewController {
 	@ExceptionHandler(InvalidAttributeException.class)
 	public ModelAndView handleInvalidAttributeException(InvalidAttributeException e, HttpServletRequest request)
 	{
-		//ModelAndView model = new ModelAndView();
-		//request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.PERMANENT_REDIRECT);
-		ModelAndView mav = new ModelAndView("redirect:/review");
+		request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.PERMANENT_REDIRECT);
+		ModelAndView mav = new ModelAndView();
 		mav.addObject("incorrect",e.getMessage());
-		//mav.addObject("review",review);
+		mav.addObject("review",new Review());
 		mav.setViewName("review");
 		return mav;
 	}

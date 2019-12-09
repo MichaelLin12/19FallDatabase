@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -11,9 +13,11 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +29,7 @@ import com.example.entity.Participator;
 import com.example.entity.Participator_Registration;
 import com.example.entity.Review;
 import com.example.entity.Topics_of_Interest;
+import com.example.exception.DuplicateRecordException;
 import com.example.service.ParticipatorService;
 
 
@@ -57,10 +62,10 @@ public class RegisterController {
 	private String readAll() throws IOException {
 		String error = "";
 		error+=read("error");
-		error+=read("error1");
-		error+=read("error2");
-		error+=read("error3");
-		error+=read("error4");
+		//error+=read("error1");
+		//error+=read("error2");
+		//error+=read("error3");
+		//error+=read("error4");
 		return error;
 	}
 
@@ -70,38 +75,59 @@ public class RegisterController {
 		errorhandling=participatorRegistration;
 		write("reserve",errorhandling.getEmail());
 		boolean basic_check=check(participatorRegistration);
-		if(basic_check)
-		{
-			Participator participator = turnToParticipator(participatorRegistration);
-			service.insertParticipator(participator);
-			if(participatorRegistration.getConType().equals("Author"))
+		String viewName = "redirect:/register";
+	//	try
+	//	{
+			if(basic_check)
 			{
-				service.insertAuthor(participator);
-				request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.PERMANENT_REDIRECT);
-				return new ModelAndView("redirect:/authorPage");
+				Participator participator = turnToParticipator(participatorRegistration);
+				service.insertParticipator(participator);
+				if(participatorRegistration.getConType().equals("Author"))
+				{
+					service.insertAuthor(participator);
+					request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.PERMANENT_REDIRECT);
+					//return new ModelAndView("redirect:/authorPage");
+					viewName = "redirect:/authorPage";
+				}
+				else if(participatorRegistration.getConType().equals("Reviewer"))
+				{
+					service.insertReviewer(participator);
+					request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.PERMANENT_REDIRECT);
+					//return new ModelAndView("redirect:/addTopics");
+					viewName = "redirect:/addTopics";
+				}
+				else if(participatorRegistration.getConType().equals("Both"))
+				{
+					service.insertAuthor(participator);
+					service.insertReviewer(participator);
+					request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.PERMANENT_REDIRECT);
+					//return new ModelAndView("redirect:/addTopics");
+					viewName = "redirect:/addTopics";
+				}
 			}
-			else if(participatorRegistration.getConType().equals("Reviewer"))
-			{
-				service.insertReviewer(participator);
-				request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.PERMANENT_REDIRECT);
-				return new ModelAndView("redirect:/addTopics");
-			}
-			else if(participatorRegistration.getConType().equals("Both"))
-			{
-				service.insertAuthor(participator);
-				service.insertReviewer(participator);
-				request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.PERMANENT_REDIRECT);
-				return new ModelAndView("redirect:/addTopics");
-			}
-		}
+		//}catch(DuplicateKeyException e)
+		//{
+		//	throw new DuplicateRecordException(e);
+		//}
+		
 		request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.PERMANENT_REDIRECT);
-		return new ModelAndView("redirect:/register");
+		//return new ModelAndView("redirect:/register");
+		return new ModelAndView(viewName);
 	}
 
 	private void write(String file, String string) throws IOException {
 		FileWriter fileWriter = new FileWriter(file);
 	    PrintWriter printWriter = new PrintWriter(fileWriter);
-	    printWriter.print(string);
+	    printWriter.println(string);
+	    printWriter.close();
+	}
+	
+	private void write(String fileName, String string, boolean append) throws IOException {
+		//FileWriter fileWriter = new FileWriter(file);
+		//File file = new File(fileName);
+		//file.delete();
+	    PrintWriter printWriter = new PrintWriter(new FileOutputStream(fileName, append));
+	    printWriter.println(string);
 	    printWriter.close();
 	}
 
@@ -141,7 +167,7 @@ public class RegisterController {
 		return conList;
 	}
 	
-	 @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
+	 @ExceptionHandler(DuplicateKeyException.class)
 	  public ModelAndView handleIntegrityException() {
 	    ModelAndView mav = new ModelAndView();
 	    mav.addObject("register", errorhandling);
@@ -189,14 +215,15 @@ public class RegisterController {
 			}
 			return string;
 		}
-		@ExceptionHandler(SQLIntegrityConstraintViolationException.class)
-		public ModelAndView handleIntegrityException(SQLIntegrityConstraintViolationException e, HttpServletRequest request)
+		@ExceptionHandler(DuplicateRecordException.class)
+		protected ModelAndView handleDuplicateRecordException(DuplicateRecordException e, HttpServletRequest request) throws IOException
 		{
 			request.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.PERMANENT_REDIRECT);
 		    ModelAndView mav = new ModelAndView();
-		    //mav.addObject("review", review);
-		    mav.addObject("incorrect","duplicate interest of topic");
-		    mav.setViewName("review");
+		    //mav.addObject("Participator_Registration", participatorRegistration);
+		    mav.addObject("incorrect","duplicate record detected!");
+		    write("error","Error - Duplicate record detected!",false);
+		    mav.setViewName("redirect:/register");
 		    return mav;
 		}
 }

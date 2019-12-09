@@ -15,12 +15,22 @@ a:hover {
   color: black;
 }
 
+h1
+{
+	color:#191970;
+	font-family:"Impact";
+	font-size: 38px;
+	position: absolute;
+  	left: 50%;
+  	top: 20%;
+  	transform: translate(-50%, -50%);
+}
 .previous {
   background-color: #f1f1f1;
   color: black;
   position:absolute;
-  left: 2%;
-  top: 50%;
+  left: 60%;
+  top: 90%;
   transform: translate(-50%, -50%);
 }
 
@@ -28,8 +38,8 @@ a:hover {
   background-color: #4CAF50;
   color: white;
   position:absolute;
-  left: 98%;
-  top: 50%;
+  left: 40%;
+  top: 90%;
   transform: translate(-50%, -50%);
 }
 
@@ -76,10 +86,11 @@ td, th {
 </style>
 </head>
 <body>
-<form action="#" th:action="@{/next}" method="post">
+<h1>Online Conference</h1>
+<form class = "next"action="#"z th:action="@{/next}" method="post">
 <input type="submit" value="Next">
 </form>
-<form action="#" th:action="@{/previous}" method="post">
+<form class = "previous" action="#" th:action="@{/previous}" method="post">
 <input type="submit" value="Previous">
 </form>
 <form action="#" th:action="@{/review}" th:object="${paper}" method="get">
